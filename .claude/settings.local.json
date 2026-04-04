@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:lumiere-dermatology.vercel.app)",
+      "WebFetch(domain:murtazamedicalcomplex.netlify.app)",
+      "WebFetch(domain:reverent-benz.vercel.app)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\user'' -Recurse -Include ''*.jpg'',''*.jpeg'',''*.png'' -ErrorAction SilentlyContinue | Where-Object {$_LastWriteTime -gt \\(Get-Date\\).AddDays\\(-7\\) -and $_Length -gt 500KB} | Sort-Object LastWriteTime -Descending | Select-Object -First 20 FullName,LastWriteTime,Length | Format-Table -AutoSize\")",
+      "Read(//mnt/c/Users/user/AppData/Local/Temp/claude/C--Users-user-Desktop-portifolo/3147eb8f-6dff-4964-b7ff-2526dfa2006f/tasks/**)",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:/Users/user'' -Recurse -Include ''*.jpg'',''*.jpeg'',''*.png'' -ErrorAction SilentlyContinue | Where-Object { $_.Length -gt 400KB } | Sort-Object LastWriteTime -Descending | Select-Object -First 15 | ForEach-Object { $_.FullName + '' | '' + $_.LastWriteTime + '' | '' + [math]::Round\\($_.Length/1KB\\) + ''KB'' }\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:/Users/user'' -Recurse -Include ''*.jpg'',''*.jpeg'',''*.png'',''*.webp'' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -gt ''2026-04-04'' } | Sort-Object LastWriteTime -Descending | ForEach-Object { $_.FullName + '' | '' + $_.LastWriteTime + '' | '' + [math]::Round\\($_.Length/1KB\\) + ''KB'' }\")",
+      "Bash(powershell.exe -Command \"Copy-Item ''C:/Users/user/Downloads/WhatsApp Image 2026-04-04 at 15.42.34.jpeg'' ''C:/Users/user/Desktop/portifolo/photo.jpg'' -Force; Write-Host ''Copied''\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:/Users/user'' -Recurse -Include ''*.jpg'',''*.jpeg'',''*.png'' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime -gt ''2026-04-04 15:00'' } | Sort-Object LastWriteTime -Descending | ForEach-Object { $_.FullName + '' | '' + $_.LastWriteTime + '' | '' + [math]::Round\\($_.Length/1KB\\) + ''KB'' }\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:/Users/user/Pictures/Screenshots'' | Sort-Object LastWriteTime -Descending | Select-Object -First 6 | ForEach-Object { $_.FullName + '' | '' + $_.LastWriteTime + '' | '' + [math]::Round\\($_.Length/1KB\\) + ''KB'' }\")",
+      "Bash(powershell.exe -Command \":*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(powershell.exe -Command \"gh auth status 2>&1\")",
+      "Bash(powershell.exe -Command \"vercel --version 2>&1\")"
+    ]
+  }
+}
