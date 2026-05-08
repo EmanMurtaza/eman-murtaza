@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Eman Murtaza — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -74,7 +74,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 
 /* ── HERO ── */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 60px 70px;z-index:1;overflow:hidden}
-.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:center;max-width:1160px;width:100%}
+.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:center;max-width:1160px;width:100%;position:relative;z-index:2}
 .hero-text{position:relative;z-index:2}
 
 .hero-jp-tag{font-family:'Shippori Mincho',serif;font-size:.75rem;color:var(--text-dim);letter-spacing:3px;margin-bottom:18px;display:flex;align-items:center;gap:12px;animation:fadeUp .7s both}
@@ -274,6 +274,16 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 /* ── RIPPLE ── */
 .ripple-effect{position:fixed;border-radius:50%;background:rgba(61,120,36,.13);pointer-events:none;width:50px;height:50px;transform:translate(-50%,-50%);animation:ripple .7s ease-out forwards;z-index:999}
 
+/* ── HERO VIDEO BG ── */
+#hero-video{position:absolute;top:300px;right:0;bottom:0;left:0;width:100%;height:calc(100% - 300px);object-fit:cover;object-position:top center;z-index:0;opacity:0;pointer-events:none;background:transparent}
+.hero-video-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,var(--bg) 0%,var(--bg) 16%,rgba(247,245,240,.88) 26%,rgba(247,245,240,.18) 40%,rgba(247,245,240,.08) 55%,rgba(247,245,240,.18) 66%,rgba(247,245,240,.75) 80%,var(--bg) 93%)}
+
+/* ── FADE-RISE ANIMATIONS ── */
+@keyframes fadeRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.animate-fade-rise{animation:fadeRise .8s ease-out both}
+.animate-fade-rise-delay{animation:fadeRise .8s .2s ease-out both}
+.animate-fade-rise-delay-2{animation:fadeRise .8s .4s ease-out both}
+
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -355,6 +365,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 
 <!-- HERO -->
 <section id="hero">
+  <!-- Cinematic looping video background -->
+  <video id="hero-video" autoplay muted playsinline loop="false" preload="auto">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
   <!-- Sakura branch top right -->
   <svg class="sakura-deco" style="top:-30px;right:-40px;width:480px" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M260 20 Q200 80,180 140 Q160 200,100 260" stroke="#e8b4bc" stroke-width="1.5" fill="none" opacity=".5"/>
@@ -376,11 +391,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-jp-tag">ポートフォリオ &nbsp; Portfolio</div>
-      <h1 class="hero-name"><em>Eman</em><br><strong>Murtaza</strong></h1>
-      <div class="hero-roles">&gt; <span id="typed"></span><span class="cur"></span></div>
-      <p class="hero-bio">A multi-disciplined tech professional weaving engineering precision, creative design, and strategic leadership into impactful digital experiences.</p>
-      <div class="hero-cta">
+      <div class="hero-jp-tag animate-fade-rise">ポートフォリオ &nbsp; Portfolio</div>
+      <h1 class="hero-name animate-fade-rise"><em>Eman</em><br><strong>Murtaza</strong></h1>
+      <div class="hero-roles animate-fade-rise-delay">&gt; <span id="typed"></span><span class="cur"></span></div>
+      <p class="hero-bio animate-fade-rise-delay">A multi-disciplined tech professional weaving engineering precision, creative design, and strategic leadership into impactful digital experiences.</p>
+      <div class="hero-cta animate-fade-rise-delay-2">
         <a href="#projects" class="btn btn-fill">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
       </div>
@@ -877,6 +892,36 @@ const cObs=new IntersectionObserver(entries=>{
   });
 },{threshold:.5});
 document.querySelectorAll('.stat-card').forEach(c=>cObs.observe(c));
+
+/* ── VIDEO BG FADE LOOP ── */
+(function(){
+  const v=document.getElementById('hero-video');
+  if(!v)return;
+  const FADE=0.5;
+  let started=false;
+
+  function tick(){
+    if(v.duration&&!v.paused){
+      const t=v.currentTime,d=v.duration;
+      if(t<FADE) v.style.opacity=t/FADE;
+      else if(t>d-FADE) v.style.opacity=(d-t)/FADE;
+      else v.style.opacity=1;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  v.addEventListener('ended',function(){
+    v.style.opacity=0;
+    setTimeout(function(){v.currentTime=0;v.play();},100);
+  });
+
+  v.addEventListener('canplay',function(){
+    if(!started){started=true;v.play().catch(function(){});requestAnimationFrame(tick);}
+  });
+
+  /* fallback: start RAF even if canplay already fired */
+  if(v.readyState>=3&&!started){started=true;v.play().catch(function(){});requestAnimationFrame(tick);}
+})();
 
 /* ── CONTACT FORM → WHATSAPP ── */
 document.getElementById('contact-form').addEventListener('submit',function(e){
