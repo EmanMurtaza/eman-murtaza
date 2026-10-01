@@ -7,28 +7,11 @@ OUT = "eman_gothic_portrait.png"
 
 im = Image.open(SRC).convert("RGB")
 # head-and-shoulders crop (3:4)
-box = (385, 835, 865, 1475)
-im = im.crop(box)
+box = (266, 667, 966, 1600)
+im = im.crop(box).resize((480, 640), Image.LANCZOS)
 W, H = im.size
 
-# gothic grade: desaturate, lift contrast, tint shadows plum / highlights bone
-g = ImageOps.grayscale(im)
-g = ImageOps.autocontrast(g, cutoff=1)
-g = ImageEnhance.Contrast(g).enhance(1.25)
-a = np.asarray(g, dtype=np.float32) / 255.0
-shadow = np.array([14, 6, 12], np.float32)
-mid = np.array([120, 40, 55], np.float32)
-high = np.array([232, 220, 212], np.float32)
-t = a[..., None]
-rgb = np.where(t < 0.5, shadow + (mid - shadow) * (t / 0.5), mid + (high - mid) * ((t - 0.5) / 0.5))
-im = Image.fromarray(rgb.clip(0, 255).astype(np.uint8))
-
-# vignette
-yy, xx = np.mgrid[0:H, 0:W]
-d = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H * 0.42) / (H * 0.62)) ** 2)
-v = np.clip(1.05 - d * 1.0, 0.0, 1.0)[..., None]
-im = Image.fromarray((np.asarray(im, np.float32) * v).clip(0, 255).astype(np.uint8))
-
+# no colour grading: original photo, just a wider crop
 # pointed gothic arch mask (supersampled)
 S = 4
 m = Image.new("L", (W * S, H * S), 0)
