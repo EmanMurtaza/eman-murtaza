@@ -5,35 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Eman Murtaza — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@400;600&family=UnifrakturCook:wght@700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f7f5f0;
-  --bg2:#eff0e8;
-  --bg3:#e6ead8;
-  --surface:#ffffff;
-  --g0:#1e3a10;
-  --g1:#2d5618;
-  --g2:#3d7824;
-  --g3:#5a9c38;
-  --g4:#82bc58;
-  --g5:#b0d880;
-  --g-glow:rgba(61,120,36,.11);
-  --g-border:rgba(61,120,36,.18);
-  /* Japanese cafe accents */
-  --sakura:#e8b4bc;
-  --sakura-dim:rgba(232,180,188,.18);
-  --sakura-border:rgba(232,180,188,.35);
-  --washi:#f5f0e8;
-  --ink:#1a2510;
-  --matcha-cream:#edf3e0;
-  --text:#1a2e10;
-  --text-mid:#3a5825;
-  --text-dim:#6a8850;
-  --r:14px;
-  --shadow:0 2px 20px rgba(30,58,16,.07);
-  --shadow-lg:0 16px 56px rgba(30,58,16,.12);
+  --bg:#0a0709;
+  --bg2:#120a0f;
+  --bg3:#1a0d14;
+  --surface:#150d12;
+  --g0:#e9dfd2;
+  --g1:#d9cfc3;
+  --g2:#d23a52;
+  --g3:#b3243c;
+  --g4:#e0566c;
+  --g5:#f08a9a;
+  --g-glow:rgba(163,19,43,.14);
+  --g-border:rgba(163,19,43,.30);
+  --sakura:#b9b1b8;
+  --sakura-dim:rgba(185,177,184,.14);
+  --sakura-border:rgba(185,177,184,.30);
+  --washi:#1b1016;
+  --ink:#0a0709;
+  --matcha-cream:#1f1017;
+  --text:#e6dccf;
+  --text-mid:#c3b9b0;
+  --text-dim:#8f848b;
+  --r:6px;
+  --shadow:0 2px 24px rgba(0,0,0,.55);
+  --shadow-lg:0 16px 56px rgba(120,10,30,.35);
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
@@ -290,7 +289,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 [data-delay="6"]{transition-delay:.6s}
 
 /* ── RIPPLE ── */
-.ripple-effect{position:fixed;border-radius:50%;background:rgba(61,120,36,.13);pointer-events:none;width:50px;height:50px;transform:translate(-50%,-50%);animation:ripple .7s ease-out forwards;z-index:999}
+.ripple-effect{position:fixed;border-radius:50%;background:rgba(163,19,43,.25);pointer-events:none;width:50px;height:50px;transform:translate(-50%,-50%);animation:ripple .7s ease-out forwards;z-index:999}
 
 /* ── HERO VIDEO BG ── */
 #hero-video{position:absolute;top:300px;right:0;bottom:0;left:0;width:100%;height:calc(100% - 300px);object-fit:cover;object-position:top center;z-index:0;opacity:0;pointer-events:none;background:transparent}
@@ -347,6 +346,82 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   .tools-grid{grid-template-columns:repeat(2,1fr)}
   .hero-cta{flex-direction:column;align-items:center}
 }
+
+/* ═════════ DARK GOTHIC THEME ═════════ */
+body{background:var(--bg);background-image:radial-gradient(ellipse 80% 40% at 50% -5%,rgba(120,10,30,.28),transparent 70%)}
+body::before{opacity:.6}
+::selection{background:var(--g3);color:#fff}
+nav{background:rgba(10,7,9,.92);border-bottom:1px solid var(--g-border)}
+.nav-drawer{background:rgba(10,7,9,.98)}
+.hero-name,.sec-title,.cofounder-brand,.proj-title,.edu-degree,.exp-role,.stat-card-num,.badge-stat-num{font-family:'Cinzel','Cormorant Garamond',serif}
+.nav-logo{font-family:'UnifrakturCook',serif;font-size:1.45rem;letter-spacing:1px;color:var(--g0)}
+.nav-logo-jp{color:var(--g2);font-family:serif;font-size:.9rem}
+.nav-links a,.sec-label,.hero-jp-tag,.jp-divider-char,.footer-inner{font-family:'Cinzel',serif}
+.nav-drawer a{font-family:'UnifrakturCook',serif}
+.hero-name{font-family:'UnifrakturCook',serif;font-weight:700;letter-spacing:1px;line-height:1.02;color:var(--g0);text-shadow:0 0 40px rgba(163,19,43,.45)}
+.hero-name strong{font-weight:700;color:var(--g2)}
+.hero-name em{font-style:normal;color:var(--g0)}
+.sec-title{font-family:'Cinzel',serif;font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.6rem)}
+.sec-title strong{font-weight:700;color:var(--g2)}
+.sec-label{color:var(--g2);letter-spacing:4px}
+.jp-divider-char{color:var(--g2);letter-spacing:6px;font-size:.78rem}
+.jp-section-deco{font-family:serif;color:rgba(163,19,43,.08);font-size:7rem}
+.hero-jp-tag{color:var(--g2);letter-spacing:5px}
+.sakura-deco{display:none}
+#hero-video{display:none}
+.hero-video-overlay{background:radial-gradient(ellipse 60% 55% at 70% 45%,rgba(140,12,35,.30),transparent 70%),linear-gradient(to bottom,transparent 60%,var(--bg) 100%)}
+#bg-canvas{opacity:.8}
+.btn{border-radius:2px;font-family:'Cinzel',serif;letter-spacing:2px;text-transform:uppercase;font-size:.74rem}
+.btn-fill{background:linear-gradient(135deg,#8c0f24,#c0243e);color:#fff;box-shadow:0 4px 22px rgba(163,19,43,.45)}
+.btn-fill:hover{background:linear-gradient(135deg,#a3132b,#d23a52);box-shadow:0 8px 32px rgba(210,58,82,.5)}
+.btn-outline{color:var(--g0);border:1px solid var(--g-border)}
+.btn-outline:hover{border-color:var(--g2);color:var(--g2);background:var(--g-glow)}
+.stat-card,.proj-card,.tool-card,.exp-edu-card,.contact-form,.cofounder-badge,.hero-badge-stat{background:linear-gradient(160deg,#1a0f15,#110a0e);border-color:var(--g-border)}
+.stat-card:hover,.proj-card:hover,.tool-card:hover,.exp-edu-card:hover{border-color:var(--g2)}
+.proj-card::after{box-shadow:inset 0 0 0 1px var(--g2)}
+.about-tag,.tech-tag,.exp-date{border-radius:2px;background:rgba(163,19,43,.10);color:var(--text-mid);border-color:var(--g-border)}
+.about-tag:hover{background:rgba(163,19,43,.28);color:#fff}
+.tool-card:hover{background:var(--matcha-cream)}
+.tool-icon-svg{fill:var(--g2);opacity:.85}
+.exp-company,.edu-school{color:var(--g2);font-style:italic}
+.exp-edu-card a{color:var(--g2)}
+.exp-dot{background:var(--bg);border-color:var(--g2)}
+.exp-item:hover .exp-dot{box-shadow:0 0 0 5px rgba(210,58,82,.18);background:var(--g2)}
+.cofounder-badge::before{background:linear-gradient(to bottom,var(--g3),var(--g5))}
+.cofounder-arrow{color:var(--g2)}
+.cofounder-badge:hover{border-color:var(--g2)}
+.cofounder-logo{box-shadow:0 2px 14px rgba(163,19,43,.45)}
+.proj-preview{background:var(--bg2)}
+.proj-preview-ph{background:linear-gradient(135deg,#1c0e15,#0f080c)!important}
+.proj-preview img{filter:grayscale(.55) contrast(1.05) brightness(.85) sepia(.15) hue-rotate(-15deg)}
+.proj-card:hover .proj-preview img{filter:grayscale(.1) brightness(.95)}
+.proj-preview-overlay{background:linear-gradient(to bottom,transparent 45%,rgba(21,13,18,.97) 100%)}
+.proj-preview-badge{background:rgba(10,7,9,.85);color:var(--g2);border-radius:2px}
+.proj-num{color:rgba(163,19,43,.18);font-family:'Cinzel',serif}
+.proj-preview-ph .ph-name{font-family:'Cinzel',serif;color:var(--g0)}
+.proj-link{color:var(--g2)}
+.proj-link:hover{color:var(--g5)}
+.skill-fill{background:linear-gradient(90deg,#7a0e20,var(--g2))}
+.skill-fill::after{background:var(--g5);box-shadow:0 0 10px var(--g2)}
+.skill-track{background:rgba(163,19,43,.18)}
+.skill-group-title{font-family:'Cinzel',serif;font-style:normal;letter-spacing:2px;text-transform:uppercase;font-size:.85rem}
+.hero-photo-ring{width:330px;height:440px}
+.photo-ring-deco,.photo-ring-deco2{display:none}
+.hero-photo-frame{border-radius:0;border:none;background:transparent;box-shadow:none;overflow:visible;filter:drop-shadow(0 0 22px rgba(163,19,43,.55)) drop-shadow(0 0 2px #d23a52)}
+.hero-photo-frame img{object-fit:contain;object-position:center}
+.bs1,.bs2{border-radius:2px}
+.contact-copy h3{font-family:'Cinzel',serif;font-weight:600;letter-spacing:1px}
+.c-icon{background:var(--washi);border-radius:2px}
+.c-item:hover .c-icon{background:rgba(163,19,43,.22)}
+.contact-form::before{content:'\2020';color:rgba(163,19,43,.10);font-family:serif;font-size:6rem}
+.f-group input,.f-group textarea{background:#0d080b;color:var(--text);border-radius:2px;border-color:var(--g-border)}
+.f-group input:focus,.f-group textarea:focus{box-shadow:0 0 0 3px rgba(210,58,82,.15)}
+footer{background:#070405;border-top:1px solid var(--g-border)}
+.footer-jp{font-family:'Cinzel',serif;color:var(--g3);letter-spacing:3px;font-size:.7rem}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--g3)}
+@media(max-width:960px){.hero-photo-ring{width:250px;height:333px}}
+@media(max-width:600px){.hero-photo-ring{width:210px;height:280px}}
 </style>
 </head>
 <body>
@@ -359,7 +434,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 <nav>
   <div class="nav-logo">
     Eman Murtaza
-    <span class="nav-logo-jp">エマン</span>
+    <span class="nav-logo-jp">&dagger;</span>
   </div>
   <div class="nav-links">
     <a href="#about">About</a>
@@ -409,7 +484,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-jp-tag animate-fade-rise">ポートフォリオ &nbsp; Portfolio</div>
+      <div class="hero-jp-tag animate-fade-rise">&dagger; &nbsp; Portfolio of Shadows &nbsp; &dagger;</div>
       <h1 class="hero-name animate-fade-rise"><em>Eman</em><br><strong>Murtaza</strong></h1>
       <div class="hero-roles animate-fade-rise-delay">&gt; <span id="typed"></span><span class="cur"></span></div>
       <p class="hero-bio animate-fade-rise-delay">A multi-disciplined tech professional weaving engineering precision, creative design, and strategic leadership into impactful digital experiences.</p>
@@ -438,7 +513,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
         <div class="photo-ring-deco"></div>
         <div class="photo-ring-deco2"></div>
         <div class="hero-photo-frame">
-          <img src="photo.jpg" alt="Eman Murtaza"/>
+          <img src="eman_gothic_portrait.png" alt="Eman Murtaza"/>
         </div>
       </div>
       <div class="hero-badge-stat bs2">
@@ -454,11 +529,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   </div>
 </section>
 
-<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">— 緑茶 —</span><div class="jp-divider-line r"></div></div>
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Prologue &dagger;</span><div class="jp-divider-line r"></div></div>
 
 <!-- ABOUT -->
 <section id="about">
-  <span class="jp-section-deco">自己</span>
+  <span class="jp-section-deco">&#10013;</span>
   <p class="sec-label reveal">// who I am</p>
   <div class="about-layout">
     <div class="about-text reveal-left">
@@ -485,11 +560,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   </div>
 </section>
 
-<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">— 経験 —</span><div class="jp-divider-line r"></div></div>
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Chronicle &dagger;</span><div class="jp-divider-line r"></div></div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <span class="jp-section-deco">仕事</span>
+  <span class="jp-section-deco">&#10013;</span>
   <p class="sec-label reveal">// career &amp; education</p>
   <h2 class="sec-title reveal">Work <strong>Experience</strong></h2>
 
@@ -623,11 +698,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   </div>
 </section>
 
-<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">— 作品 —</span><div class="jp-divider-line r"></div></div>
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Works &dagger;</span><div class="jp-divider-line r"></div></div>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <span class="jp-section-deco">作品</span>
+  <span class="jp-section-deco">&#10013;</span>
   <p class="sec-label reveal">// selected work</p>
   <h2 class="sec-title reveal">Featured <strong>Projects</strong></h2>
   <div class="projects-grid">
@@ -773,11 +848,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   </div>
 </section>
 
-<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">— 技術 —</span><div class="jp-divider-line r"></div></div>
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Arsenal &dagger;</span><div class="jp-divider-line r"></div></div>
 
 <!-- SKILLS -->
 <section id="skills">
-  <span class="jp-section-deco">技術</span>
+  <span class="jp-section-deco">&#10013;</span>
   <p class="sec-label reveal">// capabilities</p>
   <h2 class="sec-title reveal">Skills &amp; <strong>Expertise</strong></h2>
   <div class="skills-layout">
@@ -814,11 +889,11 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   </div>
 </section>
 
-<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">— 連絡 —</span><div class="jp-divider-line r"></div></div>
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Summon &dagger;</span><div class="jp-divider-line r"></div></div>
 
 <!-- CONTACT -->
 <section id="contact">
-  <span class="jp-section-deco">連絡</span>
+  <span class="jp-section-deco">&#10013;</span>
   <p class="sec-label reveal">// reach out</p>
   <h2 class="sec-title reveal">Let's <em>Connect</em> &amp;<br><strong>Build Something</strong></h2>
   <div class="contact-wrap">
@@ -869,7 +944,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       <a href="mailto:emonmurtaza@gmail.com">Email</a>
       <a href="https://wa.me/923425194397" target="_blank">WhatsApp</a>
     </div>
-    <div class="footer-jp">緑茶と夢で作られた</div>
+    <div class="footer-jp">Forged in shadow &amp; code &nbsp;&dagger;&nbsp; Per aspera ad astra</div>
   </div>
 </footer>
 
@@ -925,10 +1000,10 @@ function drawPetal(p){
     ctx.moveTo(0,-p.size);
     ctx.bezierCurveTo(p.size*.6,-p.size*.6,p.size*.8,p.size*.2,0,p.size*.9);
     ctx.bezierCurveTo(-p.size*.8,p.size*.2,-p.size*.6,-p.size*.6,0,-p.size);
-    ctx.fillStyle='#e8b4bc';ctx.fill();
+    ctx.fillStyle='#a3132b';ctx.fill();
   } else {
     ctx.beginPath();ctx.ellipse(0,0,p.size*.35,p.size,0,0,Math.PI*2);
-    ctx.fillStyle='#5a9c38';ctx.fill();
+    ctx.fillStyle='#8f848b';ctx.fill();
   }
   ctx.restore();
 }
@@ -945,7 +1020,7 @@ resize();loopCanvas();
 window.addEventListener('resize',resize);
 
 /* ── TYPING ── */
-const roles=['Software Engineer','Project Manager','Prompt Engineer','UI / UX Designer','QA Engineer','AI Builder'];
+const roles=['Software Engineer','Project Manager','Prompt Engineer','UI / UX Designer','QA Engineer','AI Builder','Applied AI Researcher'];
 let ri=0,ci=0,del=false;
 const tel=document.getElementById('typed');
 function type(){
