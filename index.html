@@ -102,6 +102,19 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .btn-sakura{background:var(--sakura);color:#fff;box-shadow:0 4px 18px var(--sakura-border)}
 .btn-sakura:hover{transform:translateY(-3px);box-shadow:0 8px 28px var(--sakura-border);filter:brightness(1.05)}
 
+/* ── CO-FOUNDER BADGE ── */
+.cofounder-badge{display:inline-flex;align-items:center;gap:13px;margin-top:24px;padding:9px 20px 9px 9px;background:var(--surface);border:1px solid var(--g-border);border-radius:15px;text-decoration:none;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.25,.8,.25,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden;cursor:none;animation:fadeUp .8s .5s both}
+.cofounder-badge::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#3b4ef0,#8b3bf0)}
+.cofounder-badge:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#8b3bf0}
+.cofounder-logo{width:46px;height:46px;border-radius:11px;object-fit:cover;flex-shrink:0;box-shadow:0 2px 12px rgba(91,59,240,.32);transition:transform .35s cubic-bezier(.25,.8,.25,1)}
+.cofounder-badge:hover .cofounder-logo{transform:scale(1.06) rotate(-2deg)}
+.cofounder-text{display:flex;flex-direction:column;line-height:1.28;text-align:left}
+.cofounder-role{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);font-family:'JetBrains Mono',monospace}
+.cofounder-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--g0);display:flex;align-items:center;gap:6px}
+.cofounder-arrow{font-size:.78rem;color:#8b3bf0;transition:transform .25s}
+.cofounder-badge:hover .cofounder-arrow{transform:translate(3px,-3px)}
+.cofounder-tag{font-size:.6rem;color:var(--text-dim);letter-spacing:.6px}
+
 /* ── HERO PHOTO ── */
 .hero-photo-wrap{position:relative;animation:fadeUp .9s .2s both;justify-self:end}
 .hero-badge-stat{position:absolute;background:var(--surface);border:1px solid var(--g-border);border-radius:12px;padding:11px 15px;z-index:10;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
@@ -159,6 +172,10 @@ section{position:relative;z-index:1;padding:100px 60px;max-width:1200px;margin:0
 .proj-card:hover .proj-preview img{transform:scale(1.06)}
 .proj-preview-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(247,245,240,.95) 100%);z-index:2;pointer-events:none}
 .proj-preview-badge{position:absolute;top:12px;right:12px;z-index:3;font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:4px 10px;border-radius:100px;border:1px solid var(--g-border);background:rgba(255,255,255,.94);color:var(--g2);letter-spacing:1px}
+.proj-preview-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.proj-preview-ph .ph-emoji{font-size:3.2rem;line-height:1;transition:transform .7s cubic-bezier(.25,.8,.25,1)}
+.proj-preview-ph .ph-name{font-family:'Shippori Mincho',serif;font-size:.72rem;letter-spacing:3px;color:var(--g1);text-transform:uppercase}
+.proj-card:hover .proj-preview-ph .ph-emoji{transform:scale(1.12)}
 .proj-body{padding:22px}
 .proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
 .proj-title{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:600;color:var(--g0)}
@@ -270,6 +287,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
 [data-delay="3"]{transition-delay:.3s}
 [data-delay="4"]{transition-delay:.4s}
 [data-delay="5"]{transition-delay:.5s}
+[data-delay="6"]{transition-delay:.6s}
 
 /* ── RIPPLE ── */
 .ripple-effect{position:fixed;border-radius:50%;background:rgba(61,120,36,.13);pointer-events:none;width:50px;height:50px;transform:translate(-50%,-50%);animation:ripple .7s ease-out forwards;z-index:999}
@@ -399,6 +417,15 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
         <a href="#projects" class="btn btn-fill">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
       </div>
+
+      <a href="https://autom8xsystems.vercel.app/" target="_blank" rel="noopener" class="cofounder-badge" title="Visit Autom8X Systems">
+        <img src="autom8x-logo.png" alt="Autom8X Systems logo" class="cofounder-logo"/>
+        <span class="cofounder-text">
+          <span class="cofounder-role">Co-Founder</span>
+          <span class="cofounder-brand">Autom8X Systems <span class="cofounder-arrow">&#8599;</span></span>
+          <span class="cofounder-tag">Web &middot; AI &middot; Automation</span>
+        </span>
+      </a>
     </div>
 
     <div class="hero-photo-wrap">
@@ -414,7 +441,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
         </div>
       </div>
       <div class="hero-badge-stat bs2">
-        <div class="badge-stat-num">3+</div>
+        <div class="badge-stat-num">6+</div>
         <div class="badge-stat-lbl">Projects Live</div>
       </div>
     </div>
@@ -450,7 +477,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
     </div>
     <div class="about-stats reveal-right">
       <div class="stat-card reveal-scale" data-delay="1"><div class="stat-card-num">4+</div><div class="stat-card-lbl">Years in Tech</div></div>
-      <div class="stat-card reveal-scale" data-delay="2"><div class="stat-card-num">3+</div><div class="stat-card-lbl">Projects Live</div></div>
+      <div class="stat-card reveal-scale" data-delay="2"><div class="stat-card-num">6+</div><div class="stat-card-lbl">Projects Live</div></div>
       <div class="stat-card reveal-scale" data-delay="3"><div class="stat-card-num">5</div><div class="stat-card-lbl">Roles Held</div></div>
       <div class="stat-card reveal-scale" data-delay="4"><div class="stat-card-num" style="font-size:1.5rem">BSc</div><div class="stat-card-lbl">Comp. Soft. Eng.</div></div>
     </div>
@@ -584,6 +611,77 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
   <div class="projects-grid">
 
     <div class="proj-card reveal-scale" data-delay="1">
+      <div class="proj-preview proj-preview-ph" style="background:linear-gradient(135deg,#efeae0,#e0d8ca)">
+        <span class="ph-emoji">🏺</span>
+        <span class="ph-name">Vessel</span>
+        <div class="proj-preview-overlay"></div>
+        <span class="proj-preview-badge">Live Site</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <h3 class="proj-title">VESSEL Ceramics</h3>
+          <span class="proj-num">01</span>
+        </div>
+        <p class="proj-desc">A warm, minimalist e-commerce storefront for a handcrafted ceramic homeware brand — hand-thrown mugs, bowls, and vases with a full product catalogue and cart flow.</p>
+        <div class="proj-tech">
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">E-Commerce</span>
+          <span class="tech-tag">Vercel</span>
+          <span class="tech-tag">UI/UX</span>
+        </div>
+        <a href="https://ecom-sigma-wine-25.vercel.app/" target="_blank" class="proj-link">Visit Live Site &rarr;</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal-scale" data-delay="2">
+      <div class="proj-preview proj-preview-ph" style="background:linear-gradient(135deg,#e6ead8,#d2e1c2)">
+        <span class="ph-emoji">🏡</span>
+        <span class="ph-name">Realty</span>
+        <div class="proj-preview-overlay"></div>
+        <span class="proj-preview-badge">Live Site</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <h3 class="proj-title">Jennifer Williams Realty</h3>
+          <span class="proj-num">02</span>
+        </div>
+        <p class="proj-desc">A polished real-estate agent website with luxury property listings, client testimonials, and prominent search, valuation, and contact calls-to-action.</p>
+        <div class="proj-tech">
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Real Estate</span>
+          <span class="tech-tag">Vercel</span>
+          <span class="tech-tag">UI/UX</span>
+        </div>
+        <a href="https://realtor-site-delta.vercel.app/" target="_blank" class="proj-link">Visit Live Site &rarr;</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal-scale" data-delay="3">
+      <div class="proj-preview proj-preview-ph" style="background:linear-gradient(135deg,#e9f0e0,#dbe7d3)">
+        <span class="ph-emoji">🤖</span>
+        <span class="ph-name">Aria</span>
+        <div class="proj-preview-overlay"></div>
+        <span class="proj-preview-badge">Live Site</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-header">
+          <h3 class="proj-title">Aria — AI Receptionist</h3>
+          <span class="proj-num">03</span>
+        </div>
+        <p class="proj-desc">An AI-powered virtual front-desk assistant with voice capabilities, department routing, and visitor check-in — backed by configurable Groq or Google Gemini engines.</p>
+        <div class="proj-tech">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">AI / LLMs</span>
+          <span class="tech-tag">Voice AI</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+        <a href="https://remote-desk-assistant.vercel.app/" target="_blank" class="proj-link">Visit Live Site &rarr;</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal-scale" data-delay="4">
       <div class="proj-preview">
         <img src="proj-lumiere.png" alt="LUMIERE Dermatology"/>
         <div class="proj-preview-overlay"></div>
@@ -592,7 +690,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       <div class="proj-body">
         <div class="proj-header">
           <h3 class="proj-title">LUMIERE Dermatology</h3>
-          <span class="proj-num">01</span>
+          <span class="proj-num">04</span>
         </div>
         <p class="proj-desc">An upscale dermatology clinic experience with GSAP animations, interactive before/after sliders, magnetic buttons, and a luxury aesthetic.</p>
         <div class="proj-tech">
@@ -606,7 +704,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       </div>
     </div>
 
-    <div class="proj-card reveal-scale" data-delay="2">
+    <div class="proj-card reveal-scale" data-delay="5">
       <div class="proj-preview">
         <img src="proj-mmc.png" alt="Murtaza Medical Complex"/>
         <div class="proj-preview-overlay"></div>
@@ -615,7 +713,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       <div class="proj-body">
         <div class="proj-header">
           <h3 class="proj-title">Murtaza Medical Complex</h3>
-          <span class="proj-num">02</span>
+          <span class="proj-num">05</span>
         </div>
         <p class="proj-desc">A multi-disciplinary healthcare website featuring WhatsApp-integrated booking, specialist profiles, and a full services directory.</p>
         <div class="proj-tech">
@@ -628,7 +726,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       </div>
     </div>
 
-    <div class="proj-card reveal-scale" data-delay="3">
+    <div class="proj-card reveal-scale" data-delay="6">
       <div class="proj-preview">
         <img src="proj-lipstudio.png" alt="Lip Studio 2000"/>
         <div class="proj-preview-overlay"></div>
@@ -637,7 +735,7 @@ footer{position:relative;z-index:1;text-align:center;padding:32px 40px;border-to
       <div class="proj-body">
         <div class="proj-header">
           <h3 class="proj-title">Lip Studio 2000</h3>
-          <span class="proj-num">03</span>
+          <span class="proj-num">06</span>
         </div>
         <p class="proj-desc">A Y2K beauty studio web experience with bold aesthetics, interactive lip colour selector, and a Bratz-inspired character avatar.</p>
         <div class="proj-tech">
