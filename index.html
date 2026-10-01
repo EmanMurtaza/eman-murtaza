@@ -422,6 +422,26 @@ footer{background:#070405;border-top:1px solid var(--g-border)}
 ::-webkit-scrollbar-thumb{background:var(--g3)}
 @media(max-width:960px){.hero-photo-ring{width:250px;height:333px}}
 @media(max-width:600px){.hero-photo-ring{width:210px;height:280px}}
+
+/* ── LATEST WORK ── */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{display:flex;flex-direction:column;gap:10px;padding:24px;background:linear-gradient(160deg,#1a0f15,#110a0e);border:1px solid var(--g-border);border-radius:var(--r);text-decoration:none;color:inherit;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.25,.8,.25,1),border-color .3s,box-shadow .3s;cursor:none}
+.news-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--g3),var(--g5))}
+.news-card:hover{transform:translateY(-6px);border-color:var(--g2);box-shadow:var(--shadow-lg)}
+.news-featured{grid-column:span 3;flex-direction:column;padding:30px 32px}
+.news-featured .news-title{font-size:1.7rem}
+.news-featured .news-desc{max-width:720px;font-size:.92rem}
+.news-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.news-date{font-family:'JetBrains Mono',monospace;font-size:.64rem;color:var(--g2);letter-spacing:1px;text-transform:uppercase}
+.news-tag{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);border:1px solid var(--g-border);padding:2px 8px;border-radius:2px;font-family:'Cinzel',serif}
+.news-title{font-family:'Cinzel',serif;font-size:1.12rem;font-weight:600;color:var(--g0);line-height:1.3}
+.news-desc{font-size:.84rem;color:var(--text-dim);line-height:1.75;flex:1}
+.news-card .proj-tech{margin-bottom:4px}
+.news-link{font-size:.78rem;color:var(--g2);font-weight:600;transition:letter-spacing .25s}
+.news-card:hover .news-link{letter-spacing:.6px;color:var(--g5)}
+.news-more{margin-top:34px;text-align:center}
+@media(max-width:960px){.news-grid{grid-template-columns:1fr 1fr}.news-featured{grid-column:span 2}}
+@media(max-width:600px){.news-grid{grid-template-columns:1fr}.news-featured{grid-column:span 1;padding:24px}}
 </style>
 </head>
 <body>
@@ -440,6 +460,7 @@ footer{background:#070405;border-top:1px solid var(--g-border)}
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#latest">Latest</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
@@ -452,6 +473,7 @@ footer{background:#070405;border-top:1px solid var(--g-border)}
   <a href="#about" class="drawer-link">About</a>
   <a href="#experience" class="drawer-link">Experience</a>
   <a href="#projects" class="drawer-link">Projects</a>
+  <a href="#latest" class="drawer-link">Latest</a>
   <a href="#skills" class="drawer-link">Skills</a>
   <a href="#contact" class="drawer-link">Contact</a>
 </div>
@@ -843,6 +865,67 @@ footer{background:#070405;border-top:1px solid var(--g-border)}
     </div>
 
   </div>
+</section>
+
+<div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Dispatches &dagger;</span><div class="jp-divider-line r"></div></div>
+
+<!-- LATEST WORK -->
+<section id="latest">
+  <span class="jp-section-deco">&#10013;</span>
+  <p class="sec-label reveal">// fresh from the repo</p>
+  <h2 class="sec-title reveal">Latest <strong>Work</strong></h2>
+  <div class="news-grid">
+    <a class="news-card reveal-scale news-featured" data-delay="1" href="https://github.com/EmanMurtaza/iris-linear-regression" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Oct 2026</span><span class="news-tag">Machine Learning</span></div>
+      <h3 class="news-title">Iris Classification Notebook</h3>
+      <p class="news-desc">A first hands-on ML notebook: a scikit-learn Logistic Regression model trained on the Iris dataset with an 80/20 train-test split, reaching 100% test accuracy.</p>
+      <div class="proj-tech"><span class="tech-tag">Python</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">pandas</span><span class="tech-tag">Jupyter</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="2" href="https://github.com/EmanMurtaza/CSharpToUppaalSolution" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Sep 2026</span><span class="news-tag">Formal Verification</span></div>
+      <h3 class="news-title">C# to UPPAAL Translator</h3>
+      <p class="news-desc">Translates C# code into UPPAAL timed-automata models for model checking, with a GUI and xUnit test suites covering requirements handling and domain generation.</p>
+      <div class="proj-tech"><span class="tech-tag">C#</span><span class="tech-tag">xUnit</span><span class="tech-tag">UPPAAL</span><span class="tech-tag">GUI</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="3" href="https://github.com/EmanMurtaza/autom8x-systems-portfolio" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Sep 2026</span><span class="news-tag">Agency Site</span></div>
+      <h3 class="news-title">Autom8X Systems Website</h3>
+      <p class="news-desc">Marketing and portfolio site for the Autom8X agency, built in React and TypeScript with Vite. Latest update fixed hero overlap on large screens and added mobile visuals.</p>
+      <div class="proj-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Vite</span><span class="tech-tag">Tailwind</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="1" href="https://github.com/EmanMurtaza/moning-associates-1" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Sep 2026</span><span class="news-tag">Client Work</span></div>
+      <h3 class="news-title">Moning &amp; Associates</h3>
+      <p class="news-desc">Business website for a professional services firm, built with Vite and Tailwind CSS and deployed on Vercel.</p>
+      <div class="proj-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">Tailwind</span><span class="tech-tag">Vercel</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="2" href="https://github.com/EmanMurtaza/adminsteven" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Aug 2026</span><span class="news-tag">Dashboard</span></div>
+      <h3 class="news-title">Admin Dashboard</h3>
+      <p class="news-desc">Custom admin panel and analytics dashboard built on Next.js and TypeScript.</p>
+      <div class="proj-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="3" href="https://github.com/EmanMurtaza/dgc-prescription" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Aug 2026</span><span class="news-tag">Healthcare</span></div>
+      <h3 class="news-title">DGC Prescription</h3>
+      <p class="news-desc">Digital prescription management tool for a healthcare client, built with React, Vite and Tailwind CSS.</p>
+      <div class="proj-tech"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">Tailwind</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+    <a class="news-card reveal-scale" data-delay="1" href="https://github.com/EmanMurtaza/medcure-rs" target="_blank" rel="noopener">
+      <div class="news-meta"><span class="news-date">Aug 2026</span><span class="news-tag">Healthcare</span></div>
+      <h3 class="news-title">MedcureRS Landing Page</h3>
+      <p class="news-desc">Modern healthcare landing-page template with a real brand logo and a green-to-blue accent palette.</p>
+      <div class="proj-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+      <span class="news-link">View on GitHub &rarr;</span>
+    </a>
+  </div>
+  <div class="news-more reveal"><a href="https://github.com/EmanMurtaza?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">All Repositories on GitHub</a></div>
 </section>
 
 <div class="jp-divider"><div class="jp-divider-line"></div><span class="jp-divider-char">&dagger; Arsenal &dagger;</span><div class="jp-divider-line r"></div></div>
